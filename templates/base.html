@@ -16,17 +16,35 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="{{ url_for('index') }}">Navbar</a>
+              <a class="navbar-brand" href="{{ url_for('index') }}">Home</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                    {% if menu=='case1' %}
+                    <a class="nav-link active" href="{{ url_for('case1') }}" style="color: rgb(66, 164, 255);">case 1</a>
+                    {% else %}
+                    <a class="nav-link" href="{{ url_for('case1') }}">case 1</a>
+                    
+                    {% endif %}
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('loop') }}">Loop</a>
+                    {% if menu=='case2' %}
+                    <a class="nav-link active" href="{{ url_for('case2') }}" style="color: rgb(66, 164, 255);">case 2</a>
+                    
+                    {% else %}
+                    <a class="nav-link" href="{{ url_for('case2') }}">case 2</a>
+                    {% endif %}
+                  </li>
+                  <li class="nav-item">
+                    {% if menu=='case3' %}
+                    
+                    <a class="nav-link active" href="{{ url_for('case3') }}" style="color: rgb(66, 164, 255);">case 3</a>
+                    {% else %}
+                    <a class="nav-link" href="{{ url_for('case3') }}">case 3</a>
+                    {% endif %}
                   </li>
                 </ul>
               </div>
@@ -34,7 +52,7 @@
           </nav>
     </div>
 
-    <section>
+    <section style="margin-top: 10px">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">

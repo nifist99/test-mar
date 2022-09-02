@@ -1,7 +1,27 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Hello Flask {{ value }}</h1>
+<div class="card">
+    <div class="card-header">
+      Soal
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Database</h5>
+      <ol>
+        <li> Tampilkan name, status, location dari seluruh pekerja yang lokasi 
+                Branch berada di Bandung.
+        </li>
+        <li>
+            Tampilkan name, gender, department dari seluruh pekerja yang join_date
+      di bulan Desember.
+        </li>
+        <li>
+            Hitung jumlah pekerja yang lahir di atas tahun 1990 dan bekerja sebagai 
+      Finance
+        </li>
+      </ol>
+    </div>
+  </div>
 {% endblock %}
 
     
