@@ -1,9 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
-    <button type="button" class="btn btn-primary">Tambah {{value}}</button>
+<!-- <div class="card mt-10">
+    <div class="card-header">
+        {{value}}
+    </div>
+    <div class="card-body">
+    <form class="row g-3">
+        <div class="col-md-6">
+          <label for="id" class="form-label">id</label>
+          <input type="number" step="any" class="form-control" id="id" name="id">
+        </div>
+        <div class="col-md-6">
+          <label for="location" class="form-label">location</label>
+          <input type="text" class="form-control" name="location" id="location">
+        </div>
+        <div class="col-12">
+          <label for="position" class="form-label">position</label>
+          <input type="text" class="form-control" name="position" id="position">
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Tambah {{value}}</button>
+        </div>
+    </form>
 </div>
+</div> -->
 <div class="card mt-10">
     <div class="card-header">
         {{value}}
@@ -12,30 +33,19 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">ID</th>
+                <th scope="col">Position</th>
+                <th scope="col">Location</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
+                {% for d in data %}
+                <tr>
+                    <th scope="row">{{ d[0] }}</th>
+                    <td>{{ d[1] }}</td>
+                    <td>{{ d[2] }}</td>
+                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>

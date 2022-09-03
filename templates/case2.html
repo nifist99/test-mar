@@ -1,9 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div>
-    <button type="button" class="btn btn-primary">Tambah {{value}}</button>
-</div>
 <div class="card mt-10">
     <div class="card-header">
         {{value}}
@@ -12,30 +9,23 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">id</th>
+                <th scope="col">department</th>
+                <th scope="col">join_date </th>
+                <th scope="col">status</th>
+                <th scope="col">branch</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-            </tr>
+                {% for d in data %}
+                <tr>
+                    <th scope="row">{{ d[0] }}</th>
+                    <td>{{ d[1] }}</td>
+                    <td>{{ d[2] }}</td>
+                    <td>{{ d[3] }}</td>
+                    <td>{{ d[4] }}</td>
+                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
